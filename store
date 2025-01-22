@@ -1,0 +1,31 @@
+<!-- store.wxml -->
+<view class="container">
+  <view class="room-list">
+    <block wx:for="{{rooms}}" wx:key="id">
+      <view class="room-item" bindtap="navigateToBooking" data-id="{{item.id}}">
+        <text>{{item.name}}</text>
+        <text>状态: {{item.status}}</text>
+      </view>
+    </block>
+  </view>
+</view>
+
+// store.js
+const { rooms } = require('../../config.js');
+
+Page({
+  data: {
+    rooms: [],
+  },
+  onLoad(options) {
+    const storeId = options.id;
+    const storeRooms = rooms.filter(room => room.storeId === parseInt(storeId));
+    this.setData({ rooms: storeRooms });
+  },
+  navigateToBooking(e) {
+    const roomId = e.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: `/pages/booking/booking?roomId=${roomId}`,
+    });
+  },
+});
