@@ -1,0 +1,18 @@
+<!-- index.wxml -->
+<view class="container">
+  <view class="header">
+    <text>HAPPYDUCK 24H自助棋牌室</text>
+    <button bindtap="switchStore">切换门店</button>
+  </view>
+  <view class="store-list">
+    <block wx:for="{{stores}}" wx:key="id">
+      <view class="store-item" bindtap="navigateToStore" data-id="{{item.id}}">
+        <text>{{item.name}}</text>
+        <text>{{item.status}}</text>
+      </view>
+    </block>
+  </view>
+  <view class="promotion">
+    <text>新店开业，优惠多多！</text>
+  </view>
+</view>
