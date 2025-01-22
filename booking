@@ -1,0 +1,26 @@
+<!-- booking.wxml -->
+<view class="container">
+  <picker mode="time" start="09:00" end="23:00" bindchange="bindTimeChange">
+    <view class="picker">选择时间: {{selectedTime}}</view>
+  </picker>
+  <button bindtap="submitBooking">提交预约</button>
+</view>
+
+// booking.js
+Page({
+  data: {
+    selectedTime: '09:00',
+  },
+  bindTimeChange(e) {
+    this.setData({
+      selectedTime: e.detail.value,
+    });
+  },
+  submitBooking() {
+    wx.showToast({
+      title: '预约成功',
+      icon: 'success',
+    });
+    wx.navigateBack();
+  },
+});
