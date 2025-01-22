@@ -1,0 +1,24 @@
+<!-- coupons.wxml -->
+<view class="container">
+  <view class="coupon-list">
+    <block wx:for="{{coupons}}" wx:key="id">
+      <coupon-card coupon="{{item}}" bindtap="buyCoupon" data-id="{{item.id}}"></coupon-card>
+    </block>
+  </view>
+</view>
+
+  // coupons.js
+const { coupons } = require('../../config.js');
+
+Page({
+  data: {
+    coupons: coupons,
+  },
+  buyCoupon(e) {
+    const couponId = e.currentTarget.dataset.id;
+    wx.showToast({
+      title: '购买成功',
+      icon: 'success',
+    });
+  },
+});
