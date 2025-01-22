@@ -1,0 +1,19 @@
+/* index.wxss */
+.container {
+  padding: 20px;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.store-item {
+  padding: 15px;
+  border-bottom: 1px solid #ccc;
+}
+.promotion {
+  margin-top: 20px;
+  color: red;
+  font-weight: bold;
+}
