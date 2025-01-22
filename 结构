@@ -1,0 +1,17 @@
+/miniprogram
+  ├── pages
+  │   ├── index               // 首页
+  │   ├── store               // 门店详情
+  │   ├── room                // 房间详情
+  │   ├── booking             // 预约页面
+  │   ├── coupons             // 卡券套餐
+  │   ├── profile             // 个人中心
+  │   └── order               // 订单详情
+  ├── components              // 自定义组件
+  │   └── coupon-card         // 卡券卡片组件
+  ├── utils                   // 工具函数
+  │   └── api.js              // 模拟API请求
+  ├── app.js                  // 小程序入口
+  ├── app.json                // 全局配置
+  ├── app.wxss                // 全局样式
+  └── config.js               // 全局配置（如门店信息）
